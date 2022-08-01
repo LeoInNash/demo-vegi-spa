@@ -14,7 +14,7 @@ Object.keys(AllRules).forEach((rule) => {
   defineRule(rule, AllRules[rule]);
 });
 configure({
-  generateMessage: (context: FieldContext) => {
+  generateMessage: (context: any) => {
     switch (context.rule.name) {
       case "required":
         return `This field field is required`;
