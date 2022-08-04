@@ -1,11 +1,28 @@
-<form>
+<form (ngSubmit)="submit()" [formGroup]="user">
   <div class="form-outline mb-4">
-    <input type="email" class="form-control" />
+    <input
+      placeholder
+      id="login-input-1"
+      matInput
+      placeholder="User"
+      name="username"
+      formControlName="name"
+      class="form-control"
+    />
     <label class="form-label">Email address</label>
   </div>
 
   <div class="form-outline mb-4">
-    <input type="password" class="form-control" />
+    <input
+      placeholder
+      id="login-input-2"
+      matInput
+      placeholder="Password"
+      name="password"
+      type="password"
+      formControlName="password"
+      class="form-control"
+    />
     <label class="form-label">Password</label>
   </div>
 
@@ -22,5 +39,5 @@
     </div>
   </div>
 
-  <button type="button" class="btn-block mb-4 site-btn">Sign in</button>
+  <button type="submit" class="btn-block mb-4 site-btn">Sign in</button>
 </form>
