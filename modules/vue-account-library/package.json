@@ -12,6 +12,7 @@
   "dependencies": {
     "@vee-validate/rules": "^4.5.11",
     "sass": "^1.52.3",
+    "single-spa-vue": "^2.5.1",
     "vee-validate": "^4.5.11",
     "vue": "^3.2.36",
     "vue-router": "^4.0.15"

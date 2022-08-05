@@ -28,7 +28,7 @@ export default defineComponent({
 <template>
   <div class="card auth-form mb-4">
     <div class="card-body">
-      <Form @submit="login">
+      <Form @submit="handleSubmit">
         <div class="form-group">
           <label for="email">Email</label>
           <Field
