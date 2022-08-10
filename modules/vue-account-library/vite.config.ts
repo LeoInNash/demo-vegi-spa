@@ -1,19 +1,38 @@
-import { fileURLToPath, URL } from "url";
+import vue from '@vitejs/plugin-vue';
 
-import { defineConfig } from "vite";
-import vue from "@vitejs/plugin-vue";
+import * as path from 'path';
 
-// https://vitejs.dev/config/
-export default defineConfig({
-  rollupOptions: {
-    input: "src/main.ts",
-    format: "system",
-    preserveEntrySignatures: true,
-  },
-  plugins: [vue()],
-  resolve: {
-    alias: {
-      "@": fileURLToPath(new URL("./src", import.meta.url)),
+export default {
+    base: 'http://localhost:3000',
+    resolve: {
+        alias: {
+            '@': path.resolve(__dirname, './src')
+        },
     },
-  },
-});
+    plugins: [
+        vue(
+            {
+                template: {
+                    transformAssetUrls: {
+                        base: '/src'
+                    }
+                }
+            }
+        ),
+    ],
+    build: {
+        rollupOptions: {
+            sourcemap: false,
+            input: {
+                app: 'src/main.ts'
+            },
+            preserveEntrySignatures: true,
+            output: {
+                entryFileNames: '[name].js',
+                dir: 'js',
+                format: 'system'
+            }
+        }
+    }
+}
+
