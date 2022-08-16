@@ -1,4 +1,4 @@
-import { Box, Grid, Tab, Tabs } from "@mui/material";
+import { Box, Tab, Tabs } from "@mui/material";
 import React, { useState } from "react";
 import AccountTab from "./account-tab";
 import AddressTab from "./address-tab";
@@ -10,9 +10,9 @@ const AccountContainer = () => {
     switch (accountTab) {
       case 0:
       default:
-        return <OrderTab/>;
+        return <OrderTab />;
       case 1:
-        return <AddressTab/>;
+        return <AddressTab />;
       case 2:
         return <AccountTab />;
     }
