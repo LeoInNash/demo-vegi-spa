@@ -1,18 +1,5 @@
-import React, {
-  ChangeEvent,
-  forwardRef,
-  useEffect,
-  useImperativeHandle,
-  useState,
-} from "react";
-import {
-  Box,
-  Grid,
-  Stack,
-  SvgIcon,
-  TextField,
-  Typography,
-} from "@mui/material";
+import React, { ChangeEvent, forwardRef, useImperativeHandle } from "react";
+import { Grid, TextField } from "@mui/material";
 
 import * as yup from "yup";
 import { useFormik } from "formik";
@@ -93,9 +80,9 @@ const CustomerInfo = forwardRef(
           formik.setErrors(formErrors);
         }
         try {
-          onSuccess && onSuccess('');
+          onSuccess && onSuccess("");
         } catch (e: any) {
-          onFailed && onFailed('');
+          onFailed && onFailed("");
         }
       },
     }));
